@@ -320,12 +320,63 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(link);
 				}
 
+
+				const image = document.createElement('img');
 				if (face.color.name === "blue" && cubelet.id === 2) {
-					const link = document.createElement('a');
-					link.href = "";
-					link.innerText = "Image";
-					stickerElement.appendChild(link);
+					image.src = "https://davidfpease.github.io/build/media/Picture1.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
 				}
+				if (face.color.name === "blue" && cubelet.id === 11) {
+					image.src = "https://davidfpease.github.io/build/media/Picture2.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 20) {
+					image.src = "https://davidfpease.github.io/build/media/Picture3.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 5) {
+					image.src = "https://davidfpease.github.io/build/media/Picture4.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 14) {
+					image.src = "https://davidfpease.github.io/build/media/Picture5.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 23) {
+					image.src = "https://davidfpease.github.io/build/media/Picture6.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 8) {
+					image.src = "https://davidfpease.github.io/build/media/Picture7.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 17) {
+					image.src = "https://davidfpease.github.io/build/media/Picture8.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				if (face.color.name === "blue" && cubelet.id === 26) {
+					image.src = "https://davidfpease.github.io/build/media/Picture9.png";
+					image.height = 120;
+					image.width = 120;
+					stickerElement.appendChild(image);
+				}
+				
 
 
 
