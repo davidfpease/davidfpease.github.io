@@ -320,6 +320,13 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(link);
 				}
 
+				if (face.color.name === "blue" && cubelet.id === 2) {
+					const link = document.createElement('a');
+					link.href = "";
+					link.innerText = "Image";
+					stickerElement.appendChild(link);
+				}
+
 
 
 				//  TEXT.
