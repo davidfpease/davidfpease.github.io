@@ -315,7 +315,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 
 				if (face.color.name === "white"  && cubelet.id === 4) {
 					const link = document.createElement('a');
-					link.href = "/Users/davidpease/Documents/App Academy/Personal Site/build/media/resume.pdf";
+					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
 					link.innerText = "Resumé";
 					stickerElement.appendChild(link);
 				}
