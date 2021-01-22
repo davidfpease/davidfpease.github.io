@@ -1,5 +1,69 @@
 
 var presets = {
+	presetReset: function () {
+		var cube = this;	
+		cube.twistDuration = 100;
+		while (cube.twistQueue.history.length > 0){
+			cube.undo();
+		}
+		cube.twistDuration = 500;
+	},
+
+	presetHardReset: function () {
+		var useLockedControls = true,
+			controls = useLockedControls ? ERNO.Locked : ERNO.Freeform;
+
+		var ua = navigator.userAgent,
+			isIe = ua.indexOf('MSIE') > -1 || ua.indexOf('Trident/') > -1;
+
+		window.cube = new ERNO.Cube({
+			hideInvisibleFaces: true,
+			controls: controls,
+			renderer: isIe ? ERNO.renderers.IeCSS3D : null
+		});
+
+		const container = document.getElementById('container');
+		var cubeElement = document.getElementsByClassName('cube')[0];
+		cubeElement.replaceWith(cube.domElement);
+
+		if (controls === ERNO.Locked) {
+			var fixedOrientation = new THREE.Euler(Math.PI * 0.1, Math.PI * -0.25, 0);
+			cube.object3D.lookAt(cube.camera.position);
+			cube.rotation.x += fixedOrientation.x;
+			cube.rotation.y += fixedOrientation.y;
+			cube.rotation.z += fixedOrientation.z;
+		}
+
+
+		// The deviceMotion function provide some subtle mouse based motion
+		// The effect can be used with the Freeform and Locked controls.
+		// This could also integrate device orientation on mobile
+
+		var motion = deviceMotion(cube, container);
+
+		motion.decay = 0.3; 				// The drag effect
+		motion.range.x = Math.PI * 0.03;	// The range of rotation 
+		motion.range.y = Math.PI * 0.03;
+		motion.range.z = 0;
+	},
+
+	presetShowTech: function () {
+		var cube = this;
+		let len = cube.twistQueue.history.length;	
+		if (len === 0){
+			cube.twist( ' y ');
+		} else {
+			cube.twistDuration = 1;
+			while (cube.twistQueue.history.length > 0) {
+				cube.undo();
+			}
+			setTimeout( ()=>{
+				cube.twist(' y ');
+				cube.twistDuration = 500;}, 1000);
+		}
+	},
+
+
 	presetBling: function(){
 
 			var cube = this;

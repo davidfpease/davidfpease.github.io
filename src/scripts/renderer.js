@@ -282,8 +282,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 
 
 
-				//  If this happens to be our logo-bearing Cubelet
-				//  we had better attach the logo to it!
+				//  Fill in custom stickers
 
 				if (face.color.name === 'white' && cubelet.id === 1) {
 					const link = document.createElement('a');
@@ -320,69 +319,100 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(link);
 				}
 
+				if (face.color.name === "white"  && cubelet.id === 8) {
+					const link = document.createElement('a');
+					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
+					link.innerText = "About";
+					stickerElement.appendChild(link);
+				}
 
+				if (face.color.name === "white"  && cubelet.id === 5) {
+					const link = document.createElement('div');
+					link.onclick = () => presets.presetShowTech.call(cubelet.cube);
+					link.innerText = "Tech";
+					stickerElement.appendChild(link);
+				}
+
+				if (face.color.name === "white" && cubelet.id === 7) {
+					const link = document.createElement('div');
+					link.onclick = () => presets.presetReset.call(cubelet.cube);
+					link.innerText = "Reset";
+					stickerElement.appendChild(link);
+				}
+
+				if (face.color.name === "white" && cubelet.id === 6) {
+					const image = document.createElement('img');
+					image.onclick = () => presets.presetShowPic.call(cubelet.cube);
+					image.src = "https://davidfpease.github.io/build/media/camera.png";
+					image.height = 120;
+					image.width = 120;
+					image.setAttribute("style", "border-radius: 17px;")
+					stickerElement.appendChild(image);
+				}
+
+				// add profile pic
 				const image = document.createElement('img');
 				if (face.color.name === "blue" && cubelet.id === 2) {
 					image.src = "https://davidfpease.github.io/build/media/Picture1.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 11) {
 					image.src = "https://davidfpease.github.io/build/media/Picture2.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 20) {
 					image.src = "https://davidfpease.github.io/build/media/Picture3.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 5) {
 					image.src = "https://davidfpease.github.io/build/media/Picture4.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 14) {
 					image.src = "https://davidfpease.github.io/build/media/Picture5.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 23) {
 					image.src = "https://davidfpease.github.io/build/media/Picture6.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 8) {
 					image.src = "https://davidfpease.github.io/build/media/Picture7.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 17) {
 					image.src = "https://davidfpease.github.io/build/media/Picture8.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "blue" && cubelet.id === 26) {
 					image.src = "https://davidfpease.github.io/build/media/Picture9.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("border-radius", "17px")
+					image.setAttribute("style", "border-radius: 17px;")
 					stickerElement.appendChild(image);
 				}
 				

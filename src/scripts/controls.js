@@ -30,7 +30,7 @@ ERNO.Controls = (function(){
 			api = {
 				enabled: true,
 				domElement: domElement,
-				rotationSpeed: 4.0,
+				rotationSpeed: 10.0,
 				damping: 0.25
 			};
 
