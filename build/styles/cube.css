@@ -229,7 +229,9 @@
 	cursor: pointer;
 }
 
-
+.camera:hover {
+	cursor: pointer;
+}
 
 
 /*

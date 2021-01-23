@@ -52,11 +52,11 @@ ERNO.renderers.CSS3D = function( cubelets, cube ){
 
 	})
 	
-	cube.right.label.rotation.y = Math.PI *  0.5;
-	cube.left.label.rotation.y 	= Math.PI * -0.5;
+	cube.right.label.rotation.y = Math.PI *  0.9;
+	cube.left.label.rotation.y 	= Math.PI * -0.9;
 	cube.back.label.rotation.y 	= Math.PI;
-	cube.up.label.rotation.x 	= Math.PI * -0.5;
-	cube.down.label.rotation.x 	= Math.PI *  0.5;
+	cube.up.label.rotation.x 	= Math.PI * -0.9;
+	cube.down.label.rotation.x 	= Math.PI *  0.9;
 
 
 	function showItem( item ){
@@ -335,7 +335,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 
 				if (face.color.name === "white" && cubelet.id === 7) {
 					const link = document.createElement('div');
-					link.onclick = () => presets.presetReset.call(cubelet.cube);
+					link.onclick = () => {
+						presets.presetReset.call(cubelet.cube);
+						//cubelet.cube.twistDuration = 500;
+					} 
 					link.innerText = "Reset";
 					stickerElement.appendChild(link);
 				}
@@ -346,73 +349,83 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/camera.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px; padding: 21px; box-sizing: border-box")
+					image.setAttribute("class", "camera");
 					stickerElement.appendChild(image);
 				}
 
 				// add profile pic
 				const image = document.createElement('img');
-				if (face.color.name === "blue" && cubelet.id === 2) {
+				if (face.color.name === "red" && cubelet.id === 6) {
 					image.src = "https://davidfpease.github.io/build/media/Picture1.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 11) {
+				if (face.color.name === "red" && cubelet.id === 7) {
 					image.src = "https://davidfpease.github.io/build/media/Picture2.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 20) {
+				if (face.color.name === "red" && cubelet.id === 8) {
 					image.src = "https://davidfpease.github.io/build/media/Picture3.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 5) {
+				if (face.color.name === "red" && cubelet.id === 15) {
 					image.src = "https://davidfpease.github.io/build/media/Picture4.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 14) {
+				if (face.color.name === "red" && cubelet.id === 16) {
 					image.src = "https://davidfpease.github.io/build/media/Picture5.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 23) {
+				if (face.color.name === "red" && cubelet.id === 17) {
 					image.src = "https://davidfpease.github.io/build/media/Picture6.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 8) {
+				if (face.color.name === "red" && cubelet.id === 24) {
 					image.src = "https://davidfpease.github.io/build/media/Picture7.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 17) {
+				if (face.color.name === "red" && cubelet.id === 25) {
 					image.src = "https://davidfpease.github.io/build/media/Picture8.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				if (face.color.name === "blue" && cubelet.id === 26) {
+				if (face.color.name === "red" && cubelet.id === 26) {
 					image.src = "https://davidfpease.github.io/build/media/Picture9.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;")
+					image.setAttribute("style", "border-radius: 17px;");
+					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
 				

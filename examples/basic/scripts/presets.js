@@ -2,11 +2,12 @@
 var presets = {
 	presetReset: function () {
 		var cube = this;	
-		cube.twistDuration = 100;
+		cube.twistDuration = 50;
+		cube.rotation.y = -0.7853981633974483;
 		while (cube.twistQueue.history.length > 0){
 			cube.undo();
 		}
-		cube.twistDuration = 500;
+		//cube.twistDuration = 500;
 	},
 
 	presetHardReset: function () {
@@ -59,6 +60,23 @@ var presets = {
 			}
 			setTimeout( ()=>{
 				cube.twist(' y ');
+				cube.twistDuration = 500;}, 1000);
+		}
+	},
+
+	presetShowPic: function () {
+		var cube = this;
+		let len = cube.twistQueue.history.length;	
+		if (len === 0){
+			cube.twist( ' X ');
+			cube.rotation.y = 0;
+		} else {
+			cube.twistDuration = 1;
+			while (cube.twistQueue.history.length > 0) {
+				cube.undo();
+			}
+			setTimeout( ()=>{
+				cube.twist(' X ');
 				cube.twistDuration = 500;}, 1000);
 		}
 	},

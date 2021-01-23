@@ -119,6 +119,13 @@ $(document).ready( function(){
 	motion.range.z = 0;
 	// motion.paused = false;				// disables the effect
 
+	const info = document.getElementById("info");
+	let button = document.createElement( 'button');
+	button.onClick = () => presets.presetReset();
+	button.type = button;
+	button.value = "RESET";
+	info.appendChild(button);
+
 
 
 })
