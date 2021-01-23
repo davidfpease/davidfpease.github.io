@@ -374,3 +374,7 @@ background-color: rgba(58, 57, 57, 0.8);
 		width: 20px;
 		filter: invert(1);
 }
+
+h1.code-line {
+    font-size: 28px;
+}

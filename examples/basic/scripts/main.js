@@ -157,6 +157,16 @@ $(document).ready( function(){
 		aboutModal.style.display = "none";
 	}
 
+	let content = document.createElement( 'div' );
+	content.innerHTML = `<h1 class="code-line" data-line-start="0" data-line-end="1"><a id="About_David_Pease_0"></a>About David Pease</h1>
+<p class="has-line-data" data-line-start="2" data-line-end="3">Hi. I’m a former Army helicopter <img src="https://davidfpease.github.io/build/media/chinook.jpg" alt="Chinook"> pilot turned software engineer. I love to solve real-world problems with practial applications of technology. When I’m not coding I spend my time woodworking, hiking, or building low-poly papercraft models.</p>
+<h1 class="code-line" data-line-start="4" data-line-end="5"><a id="About_this_page_4"></a>About this page</h1>
+<p class="has-line-data" data-line-start="6" data-line-end="9">I simply added my own twist (pun intended) to Google’s open source <a href="https://www.google.com/doodles/rubiks-cube">Cuber</a>.<br>
+Source code shared on <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber">GitHub</a>– <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber/blob/master/cuber/src/LICENSE.md">License</a>.<br>
+And Google’s <a href="https://www.chrome.com/cubelab">Cuber Lab</a>.</p>`;
+	
+modalContent.appendChild(content);
+
 	window.onclick = function (event) {
 		if (event.target == aboutModal) {
 			aboutModal.style.display = "none";
