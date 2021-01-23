@@ -137,7 +137,30 @@ $(document).ready( function(){
 	picture.className = "picture-button";
 	info.appendChild(picture);
 
+	let about = document.createElement('h3');
+	about.innerText = "ABOUT";
+	about.className = "about-button";
 
+	let aboutModal = document.getElementById('aboutModal');
+	about.onclick = () => aboutModal.style.display = "block";
+	info.appendChild(about);
 
+	let modalContent = document.createElement( 'div' );
+	modalContent.className = "modal-content";
+	aboutModal.appendChild(modalContent);
+
+	let span = document.createElement( 'span' );
+	span.className = "close";
+	span.innerText = "&times;";
+	modalContent.appendChild(span);
+	span.onclick = ()=> {
+		aboutModal.style.display = "none";
+	}
+
+	window.onclick = function (event) {
+		if (event.target == aboutModal) {
+			aboutModal.style.display = "none";
+		}
+	} 
 
 })
