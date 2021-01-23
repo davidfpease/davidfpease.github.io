@@ -1,6 +1,7 @@
 
 var presets = {
 	presetReset: function () {
+		debugger;
 		var cube = this;	
 		cube.twistDuration = 50;
 		cube.rotation.y = -0.7853981633974483;
@@ -50,7 +51,8 @@ var presets = {
 
 	presetShowTech: function () {
 		var cube = this;
-		let len = cube.twistQueue.history.length;	
+		let len = cube.twistQueue.history.length;
+		cube.rotation.y = 0;	
 		if (len === 0){
 			cube.twist( ' y ');
 		} else {
@@ -71,6 +73,7 @@ var presets = {
 			cube.twist( ' X ');
 			cube.rotation.y = 0;
 		} else {
+			cube.rotation.y = 0;
 			cube.twistDuration = 1;
 			while (cube.twistQueue.history.length > 0) {
 				cube.undo();

@@ -232,6 +232,24 @@
 .camera:hover {
 	cursor: pointer;
 }
+.reset-button {
+	left: 20px;
+}
+.skills-button {
+	left: 80px;
+}
+.picture-button {
+	left: 140px;
+}
+
+.reset-button, .skills-button, .picture-button{
+	position: absolute;
+	color: white;
+	top: 0;
+}
+.reset-button:hover, .skills-button:hover, .picture-button:hover {
+cursor: pointer;
+}
 
 
 /*

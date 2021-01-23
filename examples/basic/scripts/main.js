@@ -79,7 +79,6 @@
 
 $(document).ready( function(){ 
 
-
 	const useLockedControls = true,
 		controls = useLockedControls ? ERNO.Locked : ERNO.Freeform;
 
@@ -120,11 +119,24 @@ $(document).ready( function(){
 	// motion.paused = false;				// disables the effect
 
 	const info = document.getElementById("info");
-	let button = document.createElement( 'button');
-	button.onClick = () => presets.presetReset();
-	button.type = button;
-	button.value = "RESET";
-	info.appendChild(button);
+	let reset = document.createElement('h3');
+	reset.onclick = () => presets.presetReset.call(cube);
+	reset.innerText = "RESET";
+	reset.className = "reset-button";
+	info.appendChild(reset);
+
+	let skills = document.createElement('h3');
+	skills.onclick = () => presets.presetShowTech.call(cube);
+	skills.innerText = "SKILLS";
+	skills.className = "skills-button";
+	info.appendChild(skills);
+
+	let picture = document.createElement('h3');
+	picture.onclick = () => presets.presetShowPic.call(cube);
+	picture.innerText = "PHOTO";
+	picture.className = "picture-button";
+	info.appendChild(picture);
+
 
 
 

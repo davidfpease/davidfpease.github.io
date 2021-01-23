@@ -315,13 +315,14 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white"  && cubelet.id === 4) {
 					const link = document.createElement('a');
 					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
-					link.innerText = "Resumé";
+					link.innerText = "Resume";
 					stickerElement.appendChild(link);
 				}
 
 				if (face.color.name === "white"  && cubelet.id === 8) {
 					const link = document.createElement('a');
-					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
+					//this should open a full page modal
+					link.href = "";
 					link.innerText = "About";
 					stickerElement.appendChild(link);
 				}
@@ -329,7 +330,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white"  && cubelet.id === 5) {
 					const link = document.createElement('div');
 					link.onclick = () => presets.presetShowTech.call(cubelet.cube);
-					link.innerText = "Tech";
+					link.innerText = "Skills";
 					stickerElement.appendChild(link);
 				}
 
@@ -360,7 +361,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture1.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					image.setAttribute("style", "border-top-left-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -368,7 +369,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture2.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					//image.setAttribute("style", "border-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -376,7 +377,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture3.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					image.setAttribute("style", "border-top-right-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -384,7 +385,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture4.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					//image.setAttribute("style", "border-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -392,7 +393,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture5.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					//image.setAttribute("style", "border-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -400,7 +401,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture6.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					//image.setAttribute("style", "border-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -408,7 +409,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture7.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					image.setAttribute("style", "border-bottom-left-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -416,7 +417,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture8.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					//image.setAttribute("style", "border-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
@@ -424,12 +425,74 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.src = "https://davidfpease.github.io/build/media/Picture9.png";
 					image.height = 120;
 					image.width = 120;
-					image.setAttribute("style", "border-radius: 17px;");
+					image.setAttribute("style", "border-bottom-right-radius: 17px;");
 					image.style.transform = 'rotate(-90deg)';
 					stickerElement.appendChild(image);
 				}
-				
 
+				//add tech icons
+				if (face.color.name === "green" && cubelet.id === 18) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-css3-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 9) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-html5-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 0) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-ruby-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 21) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-javascript-plain" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 12) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-rails-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 3) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-react-original-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 24) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-postgresql-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 13) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-git-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 6) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-mongodb-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+				if (face.color.name === "green" && cubelet.id === 15) {
+					let icon = document.createElement( 'div' );
+					icon.style.transform = "rotate(90deg)";		
+					icon.innerHTML = '<i class="devicon-nodejs-plain-wordmark" style="font-size: 90px"></i>'
+					stickerElement.appendChild(icon);
+				}
+
+				
 
 
 				//  TEXT.
