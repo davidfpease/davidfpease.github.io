@@ -142,16 +142,16 @@ $(document).ready( function(){
 	about.className = "about-button";
 
 	let aboutModal = document.getElementById('aboutModal');
-	about.onclick = () => aboutModal.style.display = "block";
+	about.onclick = () => aboutModal.style.display = "flex";
 	info.appendChild(about);
 
 	let modalContent = document.createElement( 'div' );
 	modalContent.className = "modal-content";
 	aboutModal.appendChild(modalContent);
 
-	let span = document.createElement( 'span' );
+	let span = document.createElement( 'div' );
 	span.className = "close";
-	span.innerText = "&times;";
+	span.innerHTML = '<img id="close-icon" src="https://davidfpease.github.io/build/media/close.png">';
 	modalContent.appendChild(span);
 	span.onclick = ()=> {
 		aboutModal.style.display = "none";

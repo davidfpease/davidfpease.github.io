@@ -320,10 +320,11 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				}
 
 				if (face.color.name === "white"  && cubelet.id === 8) {
-					const link = document.createElement('a');
+					const link = document.createElement('div');
 					//this should open a full page modal
-					link.href = "";
+					let modal = document.getElementById('aboutModal');
 					link.innerText = "About";
+					link.onclick = () => modal.style.display = "flex";
 					stickerElement.appendChild(link);
 				}
 

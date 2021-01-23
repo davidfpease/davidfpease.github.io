@@ -338,24 +338,28 @@ cursor: pointer;
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	align-items: center;
+	justify-content: center;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+background-color: rgba(58, 57, 57, 0.8);
+    padding: 20px;
+    border-radius: 6px;
+    width: 80%;
+    color: white;
+    font-weight: 700;
+    font-size: medium;
+		letter-spacing: 3px;
+		line-height: 25px;
+	
 }
 
 /* The Close Button */
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+	float: right;
 }
 
 .close:hover,
@@ -364,3 +368,9 @@ cursor: pointer;
   text-decoration: none;
   cursor: pointer;
 } 
+
+#close-icon{
+    height: 20px;
+		width: 20px;
+		filter: invert(1);
+}
