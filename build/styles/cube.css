@@ -418,13 +418,13 @@ img#chinook {
 }
 
 .marquee-img {
-	width: 1080px;
+	width: 1440px;
 	-moz-transform: translateX(100%);
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
 	-moz-animation: scroll-left 2s linear ;
 	-webkit-animation: scroll-left 2s linear ;
-	animation: scroll-left 10s linear infinite;
+	animation: scroll-left 20s linear infinite;
 }
 
         @-moz-keyframes scroll-left {
