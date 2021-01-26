@@ -412,9 +412,13 @@ img#chinook {
 	height: 24px;
 }
 
+.marquee {
+    width: 120px;
+    overflow: hidden;
+}
+
 .marquee-img {
-	font-size: 44px;
-	width: 100%;
+	width: 1080px;
 	-moz-transform: translateX(100%);
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
@@ -443,9 +447,9 @@ img#chinook {
         
         @keyframes scroll-left {
             0% {
-                -moz-transform: translateX(100%);
-                -webkit-transform: translateX(100%);
-                transform: translateX(100%);
+                -moz-transform: translateX(0%);
+                -webkit-transform: translateX(0%);
+                transform: translateX(0%);
             }
             100% {
                 -moz-transform: translateX(-100%);
