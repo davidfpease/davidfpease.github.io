@@ -158,19 +158,52 @@ $(document).ready( function(){
 	}
 
 	let content = document.createElement( 'div' );
-	content.innerHTML = `<h1 class="code-line" data-line-start="0" data-line-end="1"><a id="About_David_Pease_0"></a>About David Pease</h1>
-<p class="has-line-data" data-line-start="2" data-line-end="3">Hi. I’m a former Army helicopter <img src="https://davidfpease.github.io/build/media/chinook.jpg" alt="Chinook"> pilot turned software engineer. I love to solve real-world problems with practial applications of technology. When I’m not coding I spend my time woodworking, hiking, or building low-poly papercraft models.</p>
-<h1 class="code-line" data-line-start="4" data-line-end="5"><a id="About_this_page_4"></a>About this page</h1>
-<p class="has-line-data" data-line-start="6" data-line-end="9">I simply added my own twist (pun intended) to Google’s open source <a href="https://www.google.com/doodles/rubiks-cube">Cuber</a>.<br>
-Source code shared on <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber">GitHub</a>– <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber/blob/master/cuber/src/LICENSE.md">License</a>.<br>
-And Google’s <a href="https://www.chrome.com/cubelab">Cuber Lab</a>.</p>`;
+	content.innerHTML = `<h1 class="code-line">About David Pease</h1>
+	<p>Hi. I’m a former Army helicopter <img id="chinook" src="https://raw.githubusercontent.com/davidfpease/davidfpease.github.io/master/build/media/chinook.png" alt="Chinook"> pilot turned software engineer. I love to solve real-world problems with practial applications of technology. When I’m not coding I spend my time woodworking, hiking, or building low-poly papercraft models.</p>
+	<br><h1 class="code-line" >About this page</h1>
+	<p>I simply added my own <span class="tooltip">twist<span class="tooltiptext">Pun intended!</span></span> to Google’s open source <a href="https://www.google.com/doodles/rubiks-cube">Cuber</a>.<br>
+	Cuber's source code shared on <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber">GitHub</a>– <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber/blob/master/cuber/src/LICENSE.md">License</a>.<br>
+	And Google’s <a href="https://www.chrome.com/cubelab">Cuber Lab</a>.</p>`;
 	
-modalContent.appendChild(content);
+	modalContent.appendChild(content);
 
 	window.onclick = function (event) {
 		if (event.target == aboutModal) {
 			aboutModal.style.display = "none";
 		}
 	} 
+
+	
+	// marquee code
+
+	let marqueeSquares = document.getElementsByClassName("marquee");
+	let counter = 9;
+	let name = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',' ','D', 'a', 'v', 'i','d',' ', ' ', 'P', 'e', 'a', 's', 'e',' ', ' ',' ',' ',' ',' ',' ',' ']
+	
+	const marqueeScroll = () =>{
+
+		// if (counter < name.length){
+		marqueeSquares[8].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/davidpease.png">'; //name[counter];
+		marqueeSquares[5].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/davidpease.png">'; //name[Math.abs((counter-1))];
+			// marqueeSquares[2].innerText = name[Math.abs((counter-2))];
+			// marqueeSquares[7].innerText = name[Math.abs((counter-3))];
+			// marqueeSquares[4].innerText = name[Math.abs((counter-4))];
+			// marqueeSquares[1].innerText = name[Math.abs((counter-5))];
+			// marqueeSquares[6].innerText = name[Math.abs((counter-6))];
+			// marqueeSquares[3].innerText = name[Math.abs((counter-7))];
+			// marqueeSquares[0].innerText = name[Math.abs((counter-8))];
+			// debugger;
+		
+		counter ++;
+		counter === name.length ? counter = 0: null;
+	}
+
+
+
+
+
+
+
+	window.setInterval(marqueeScroll, 3000);
 
 })

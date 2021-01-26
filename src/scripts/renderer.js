@@ -474,16 +474,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					icon.innerHTML = '<i class="devicon-postgresql-plain-wordmark" style="font-size: 90px"></i>'
 					stickerElement.appendChild(icon);
 				}
-				if (face.color.name === "green" && cubelet.id === 13) {
-					let icon = document.createElement( 'div' );
-					icon.style.transform = "rotate(90deg)";		
-					icon.innerHTML = '<i class="devicon-git-plain-wordmark" style="font-size: 90px"></i>'
-					stickerElement.appendChild(icon);
-				}
 				if (face.color.name === "green" && cubelet.id === 6) {
 					let icon = document.createElement( 'div' );
 					icon.style.transform = "rotate(90deg)";		
-					icon.innerHTML = '<i class="devicon-mongodb-plain-wordmark" style="font-size: 90px"></i>'
+					icon.innerHTML = '<i class="devicon-git-plain-wordmark" style="font-size: 90px"></i>'
 					stickerElement.appendChild(icon);
 				}
 				if (face.color.name === "green" && cubelet.id === 15) {
@@ -494,6 +488,72 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				}
 
 				
+				// let letters = `<span id="D">D</span>
+				// 											<span id="a">a</span>
+				// 											<span id="v">v</span>
+				// 											<span id="e">e</span>
+				// 											<span id="P">P</span>
+				// 											<span id="e">e</span>
+				// 											<span id="a">a</span>
+				// 											<span id="s">s</span>
+				// 											<span id="e">e</span>`;
+				//Marquee cubelets
+				if (face.color.name === "blue" && cubelet.id === 2) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name1"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 11) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name2"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 20) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name3"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 5) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name4"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 14) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name5"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 23) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name6"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 8) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name7"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 17) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name8"></p>`;
+					stickerElement.appendChild(letter);
+				}
+				if (face.color.name === "blue" && cubelet.id === 26) {
+					let letter = document.createElement('div');
+					// letter.style.transform = "rotate(90deg)";
+					letter.innerHTML = `<p class="marquee" id="name9"></p>`;
+					stickerElement.appendChild(letter);
+				}
+
+
 
 
 				//  TEXT.

@@ -378,3 +378,78 @@ background-color: rgba(58, 57, 57, 0.8);
 h1.code-line {
     font-size: 28px;
 }
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 182px;
+	color: white;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
+	position: absolute;
+	top: -38px;
+	z-index: 1;
+	left: 22px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+img#chinook {
+	filter: invert(1);
+	height: 24px;
+}
+
+.marquee {
+	font-size: 44px;
+	width: 100%;
+	-moz-transform: translateX(100%);
+	-webkit-transform: translateX(100%);
+	transform: translateX(100%);
+	-moz-animation: scroll-left 2s linear ;
+	-webkit-animation: scroll-left 2s linear ;
+	animation: scroll-left 10s linear ;
+}
+
+        @-moz-keyframes scroll-left {
+            0% {
+                -moz-transform: translateX(100%);
+            }
+            100% {
+                -moz-transform: translateX(-100%);
+            }
+        }
+        
+        @-webkit-keyframes scroll-left {
+            0% {
+                -webkit-transform: translateX(100%);
+            }
+            100% {
+                -webkit-transform: translateX(-100%);
+            }
+        }
+        
+        @keyframes scroll-left {
+            0% {
+                -moz-transform: translateX(100%);
+                -webkit-transform: translateX(100%);
+                transform: translateX(100%);
+            }
+            100% {
+                -moz-transform: translateX(-100%);
+                -webkit-transform: translateX(-100%);
+                transform: translateX(-100%);
+            }
+        }
