@@ -418,7 +418,7 @@ img#chinook {
 }
 
 .marquee-img {
-	width: 1440px;
+	width: 1080px;
 	-moz-transform: translateX(100%);
 	-webkit-transform: translateX(100%);
 	transform: translateX(100%);
