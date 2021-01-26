@@ -191,9 +191,9 @@ $(window).on("load", ()=>{
 		marqueeSquares[8].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee3.png">'; //name[counter];
 		marqueeSquares[5].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee2.png">'; //name[Math.abs((counter-1))];
 		marqueeSquares[2].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee1.png">'; //name[Math.abs((counter-2))];
-		marqueeSquares[7].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee4.png">'; //name[Math.abs((counter-3))];
-		marqueeSquares[4].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee3.png">'; //name[Math.abs((counter-4))];
-		marqueeSquares[1].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee2.png">'; //name[Math.abs((counter-5))];
+		marqueeSquares[7].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee6.png">'; //name[Math.abs((counter-3))];
+		marqueeSquares[4].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee5.png">'; //name[Math.abs((counter-4))];
+		marqueeSquares[1].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee4.png">'; //name[Math.abs((counter-5))];
 		marqueeSquares[6].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee3.png">'; //name[Math.abs((counter-6))];
 		marqueeSquares[3].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee2.png">'; //name[Math.abs((counter-7))];
 		marqueeSquares[0].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee1.png">'; //name[Math.abs((counter-8))];
