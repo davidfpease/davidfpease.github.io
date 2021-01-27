@@ -287,6 +287,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === 'white' && cubelet.id === 1) {
 					const link = document.createElement('a');
 					link.href = "https://www.linkedin.com/in/davidfpease/";
+					link.target = "_blank";
 					link.innerText = "LinkedIn";
 					stickerElement.appendChild(link);
 				}
@@ -294,6 +295,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white"  && cubelet.id === 0) {
 					const link = document.createElement('a');
 					link.href = "https://angel.co/u/david-pease";
+					link.target = "_blank";
 					link.innerText = "AngelList";
 					stickerElement.appendChild(link);
 				}
@@ -301,6 +303,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white"  && cubelet.id === 2) {
 					const link = document.createElement('a');
 					link.href = "https://github.com/davidfpease";
+					link.target = "_blank";
 					link.innerText = "GitHub";
 					stickerElement.appendChild(link);
 				}
@@ -315,6 +318,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white"  && cubelet.id === 4) {
 					const link = document.createElement('a');
 					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
+					link.target = "_blank";
 					link.innerText = "Resume";
 					stickerElement.appendChild(link);
 				}

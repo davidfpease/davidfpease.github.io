@@ -161,9 +161,10 @@ $(document).ready( function(){
 	content.innerHTML = `<h1 class="code-line">About David Pease</h1>
 	<p>Hi. I’m a former Army helicopter <img id="chinook" src="https://raw.githubusercontent.com/davidfpease/davidfpease.github.io/master/build/media/chinook.png" alt="Chinook"> pilot turned software engineer. I love to solve real-world problems with practial applications of technology. When I’m not coding I spend my time woodworking, hiking, or building low-poly papercraft models.</p>
 	<br><h1 class="code-line" >About this page</h1>
-	<p>I simply added my own <span class="tooltip">twist<span class="tooltiptext">Pun intended!</span></span> to Google’s open source <a href="https://www.google.com/doodles/rubiks-cube">Cuber</a>.<br>
-	Cuber's source code shared on <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber">GitHub</a>– <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber/blob/master/cuber/src/LICENSE.md">License</a>.<br>
-	And Google’s <a href="https://www.chrome.com/cubelab">Cuber Lab</a>.</p>`;
+	<p>I simply added my own <span class="tooltip">twist<span class="tooltiptext">Pun intended!</span></span> to Google’s open source <a href="https://www.google.com/doodles/rubiks-cube" target="_blank">Cuber</a>.<br>
+	Cuber's source code shared on <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber" target="_blank">GitHub</a>– <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber/blob/master/cuber/src/LICENSE.md" target="_blank">License</a>.<br>
+	And Google’s <a href="https://www.chrome.com/cubelab" target="_blank">Cuber Lab</a>.</p>
+	My GitHub <a href="https://github.com/davidfpease/davidfpease.github.io" target="_blank">repository</a>.</p>`;
 	
 	modalContent.appendChild(content);
 
@@ -182,8 +183,6 @@ $(window).on("load", ()=>{
 	// marquee code
 
 	let marqueeSquares = document.getElementsByClassName("marquee");
-	let counter = 9;
-	let name = [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'D', 'a', 'v', 'i', 'd', ' ', ' ', 'P', 'e', 'a', 's', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
 
 	const marqueeScroll = () => {
 
@@ -197,17 +196,8 @@ $(window).on("load", ()=>{
 		marqueeSquares[6].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee9.png">'; //name[Math.abs((counter-6))];
 		marqueeSquares[3].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee8.png">'; //name[Math.abs((counter-7))];
 		marqueeSquares[0].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee7.png">'; //name[Math.abs((counter-8))];
-		debugger;
-
-		counter++;
-		counter === name.length ? counter = 0 : null;
+	
 	}
-
-
-
-
-
-
 	marqueeScroll();
-	//window.setInterval(marqueeScroll, 3000);
+	
 });
