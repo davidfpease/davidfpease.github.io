@@ -192,7 +192,6 @@ $(window).on("load", ()=>{
 
 	const marqueeScroll = () => {
 
-		// if (counter < name.length){
 		marqueeSquares[8].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee3.png">'; //name[counter];
 		marqueeSquares[5].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee2.png">'; //name[Math.abs((counter-1))];
 		marqueeSquares[2].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee1.png">'; //name[Math.abs((counter-2))];
@@ -205,5 +204,7 @@ $(window).on("load", ()=>{
 	
 	}
 	marqueeScroll();
+
+	window.cubeStart = lodash_.cloneDeep(window.cube);
 	
 });

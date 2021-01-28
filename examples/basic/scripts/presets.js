@@ -47,57 +47,102 @@ var presets = {
 		motion.range.x = Math.PI * 0.03;	// The range of rotation 
 		motion.range.y = Math.PI * 0.03;
 		motion.range.z = 0;
+		
 	},
 
 	presetShowTech: function () {
 		var cube = this;
 		let len = cube.twistQueue.history.length;
-		cube.rotation.y = 0;	
 		if (len === 0){
+			cube.rotation.y = 0;	
 			cube.twist( ' y ');
 		} else {
-			cube.twistDuration = 1;
-			while (cube.twistQueue.history.length > 0) {
-				cube.undo();
+			if (cube.twistQueue.history.length >20){
+				presets.presetHardReset();
+				
+			} else {
+				cube.twistDuration = 1;
+				while (cube.twistQueue.history.length > 0) {
+					cube.undo();
+				}
 			}
-			setTimeout( ()=>{
-				cube.twist(' y ');
-				cube.twistDuration = 500;}, 1000);
+						setTimeout( ()=>{
+							window.cube.twist(' y ');
+							window.cube.rotation.y = 0;
+							window.cube.twistDuration = 500;
+							presets.addMarquee();
+						}, 1000);
 		}
+
 	},
 	presetProjects: function () {
 		var cube = this;
 		let len = cube.twistQueue.history.length;
-		cube.rotation.y = 0;	
-		if (len === 0){
-			cube.twist( ' x ');
+		if (len === 0) {
+			cube.rotation.y = 0;
+			cube.twist(' x ');
 		} else {
-			cube.twistDuration = 1;
-			while (cube.twistQueue.history.length > 0) {
-				cube.undo();
+			if (cube.twistQueue.history.length > 20) {
+				presets.presetHardReset();
+
+			} else {
+				cube.twistDuration = 1;
+				while (cube.twistQueue.history.length > 0) {
+					cube.undo();
+				}
 			}
-			setTimeout( ()=>{
-				cube.twist(' x ');
-				cube.twistDuration = 500;}, 1000);
+			setTimeout(() => {
+				window.cube.twist(' x ');
+				window.cube.rotation.y = 0;
+				window.cube.twistDuration = 500;
+				presets.addMarquee();
+			}, 1000);
 		}
 	},
 
 	presetShowPic: function () {
 		var cube = this;
-		let len = cube.twistQueue.history.length;	
-		if (len === 0){
-			cube.twist( ' X ');
+		let len = cube.twistQueue.history.length;
+		if (len === 0) {
 			cube.rotation.y = 0;
+			cube.twist(' X ');
 		} else {
-			cube.rotation.y = 0;
-			cube.twistDuration = 1;
-			while (cube.twistQueue.history.length > 0) {
-				cube.undo();
+			if (cube.twistQueue.history.length > 20) {
+				presets.presetHardReset();
+
+			} else {
+				cube.twistDuration = 1;
+				while (cube.twistQueue.history.length > 0) {
+					cube.undo();
+				}
 			}
-			setTimeout( ()=>{
-				cube.twist(' X ');
-				cube.twistDuration = 500;}, 1000);
+			setTimeout(() => {
+				window.cube.twist(' X ');
+				window.cube.rotation.y = 0;
+				window.cube.twistDuration = 500;
+				presets.addMarquee();
+			}, 1000);
 		}
+	},
+
+	addMarquee: ()=>{
+		let marqueeSquares = document.getElementsByClassName("marquee");
+		debugger;
+		const marqueeScroll = () => {
+
+			// if (counter < name.length){
+			marqueeSquares[8].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee3.png">'; //name[counter];
+			marqueeSquares[5].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee2.png">'; //name[Math.abs((counter-1))];
+			marqueeSquares[2].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee1.png">'; //name[Math.abs((counter-2))];
+			marqueeSquares[7].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee6.png">'; //name[Math.abs((counter-3))];
+			marqueeSquares[4].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee5.png">'; //name[Math.abs((counter-4))];
+			marqueeSquares[1].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee4.png">'; //name[Math.abs((counter-5))];
+			marqueeSquares[6].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee9.png">'; //name[Math.abs((counter-6))];
+			marqueeSquares[3].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee8.png">'; //name[Math.abs((counter-7))];
+			marqueeSquares[0].innerHTML = '<img class="marquee-img" src="https://davidfpease.github.io/build/media/marquee7.png">'; //name[Math.abs((counter-8))];
+
+		}
+		marqueeScroll();
 	},
 
 
