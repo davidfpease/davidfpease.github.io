@@ -199,7 +199,8 @@
 
 .sticker a {
     color: black;
-    font-size: 21px;
+		font-size: 21px;
+		line-height: 26px;
 }
 
 
@@ -241,16 +242,19 @@
 .picture-button {
 	left: 140px;
 }
-.about-button {
+.projects-button {
 	left: 200px;
 }
+.about-button {
+	left: 290px;
+}
 
-.reset-button, .skills-button, .picture-button, .about-button{
+.reset-button, .skills-button, .picture-button, .about-button, .projects-button{
 	position: absolute;
 	color: white;
 	top: 0;
 }
-.reset-button:hover, .skills-button:hover, .picture-button:hover, .about-button:hover {
+.reset-button:hover, .projects-button:hover, .skills-button:hover, .picture-button:hover, .about-button:hover {
 cursor: pointer;
 }
 
@@ -383,7 +387,7 @@ h1.code-line {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted black;
+  border-bottom: 1px dotted white;
 }
 
 .tooltip .tooltiptext {

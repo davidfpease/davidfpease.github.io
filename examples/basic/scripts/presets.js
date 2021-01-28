@@ -1,7 +1,7 @@
 
 var presets = {
 	presetReset: function () {
-		debugger;
+		
 		var cube = this;	
 		cube.twistDuration = 50;
 		cube.rotation.y = -0.7853981633974483;
@@ -62,6 +62,22 @@ var presets = {
 			}
 			setTimeout( ()=>{
 				cube.twist(' y ');
+				cube.twistDuration = 500;}, 1000);
+		}
+	},
+	presetProjects: function () {
+		var cube = this;
+		let len = cube.twistQueue.history.length;
+		cube.rotation.y = 0;	
+		if (len === 0){
+			cube.twist( ' x ');
+		} else {
+			cube.twistDuration = 1;
+			while (cube.twistQueue.history.length > 0) {
+				cube.undo();
+			}
+			setTimeout( ()=>{
+				cube.twist(' x ');
 				cube.twistDuration = 500;}, 1000);
 		}
 	},

@@ -342,10 +342,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white" && cubelet.id === 7) {
 					const link = document.createElement('div');
 					link.onclick = () => {
-						presets.presetReset.call(cubelet.cube);
+						presets.presetProjects.call(cubelet.cube);
 						//cubelet.cube.twistDuration = 500;
 					} 
-					link.innerText = "Reset";
+					link.innerText = "Projects";
 					stickerElement.appendChild(link);
 				}
 
@@ -489,6 +489,36 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					icon.style.transform = "rotate(90deg)";		
 					icon.innerHTML = '<i class="devicon-nodejs-plain-wordmark" style="font-size: 90px"></i>'
 					stickerElement.appendChild(icon);
+				}
+
+				//add projects
+				if (face.color.name === 'orange' && cubelet.id === 18) {
+					const link = document.createElement('a');
+					link.href = "https://pierian-spring.herokuapp.com/#/";
+					link.target = "_blank";
+					link.innerText = "Pierian Spring";
+					stickerElement.appendChild(link);
+				}
+				if (face.color.name === 'orange' && cubelet.id === 19) {
+					const link = document.createElement('a');
+					link.href = "https://davidfpease.github.io/LifeLine/";
+					link.target = "_blank";
+					link.innerText = "LifeLine";
+					stickerElement.appendChild(link);
+				}
+				if (face.color.name === 'orange' && cubelet.id === 20) {
+					const link = document.createElement('a');
+					link.href = "https://pillrz.herokuapp.com/#/";
+					link.target = "_blank";
+					link.innerText = "Pillr";
+					stickerElement.appendChild(link);
+				}
+				if (face.color.name === 'orange' && cubelet.id === 9) {
+					const link = document.createElement('a');
+					link.href = "https://davidfpease.github.io/Relatively/";
+					link.target = "_blank";
+					link.innerText = "Relatively";
+					stickerElement.appendChild(link);
 				}
 
 				

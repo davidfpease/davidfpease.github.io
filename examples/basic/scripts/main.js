@@ -137,6 +137,12 @@ $(document).ready( function(){
 	picture.className = "picture-button";
 	info.appendChild(picture);
 
+	let projects = document.createElement('h3');
+	projects.onclick = () => presets.presetProjects.call(cube);
+	projects.innerText = "PROJECTS";
+	projects.className = "projects-button";
+	info.appendChild(projects);
+
 	let about = document.createElement('h3');
 	about.innerText = "ABOUT";
 	about.className = "about-button";
