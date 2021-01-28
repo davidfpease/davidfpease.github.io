@@ -127,7 +127,7 @@ var presets = {
 
 	addMarquee: ()=>{
 		let marqueeSquares = document.getElementsByClassName("marquee");
-		debugger;
+		
 		const marqueeScroll = () => {
 
 			// if (counter < name.length){

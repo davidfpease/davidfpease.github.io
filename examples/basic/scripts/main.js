@@ -204,7 +204,5 @@ $(window).on("load", ()=>{
 	
 	}
 	marqueeScroll();
-
-	window.cubeStart = lodash_.cloneDeep(window.cube);
 	
 });
