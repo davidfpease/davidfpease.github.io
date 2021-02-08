@@ -50,7 +50,8 @@ var presets = {
 		
 	},
 
-	presetShowTech: function () {
+	presetShowTech: function (e) {
+
 		var cube = this;
 		let len = cube.twistQueue.history.length;
 		if (len === 0){

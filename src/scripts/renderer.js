@@ -304,7 +304,12 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					const link = document.createElement('a');
 					link.href = "https://github.com/davidfpease";
 					link.target = "_blank";
-					link.innerText = "GitHub";
+					link.innerText = "GitHubb";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
+
 					stickerElement.appendChild(link);
 				}
 
@@ -510,7 +515,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					const link = document.createElement('a');
 					link.href = "https://pillrz.herokuapp.com/#/";
 					link.target = "_blank";
-					link.innerText = "Pillr";
+					link.innerText = "Pillar";
 					stickerElement.appendChild(link);
 				}
 				if (face.color.name === 'orange' && cubelet.id === 9) {
@@ -521,16 +526,6 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(link);
 				}
 
-				
-				// let letters = `<span id="D">D</span>
-				// 											<span id="a">a</span>
-				// 											<span id="v">v</span>
-				// 											<span id="e">e</span>
-				// 											<span id="P">P</span>
-				// 											<span id="e">e</span>
-				// 											<span id="a">a</span>
-				// 											<span id="s">s</span>
-				// 											<span id="e">e</span>`;
 				//Marquee cubelets
 				if (face.color.name === "blue" && cubelet.id === 2) {
 					let letter = document.createElement('div');
