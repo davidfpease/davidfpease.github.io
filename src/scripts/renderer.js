@@ -289,6 +289,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://www.linkedin.com/in/davidfpease/";
 					link.target = "_blank";
 					link.innerText = "LinkedIn";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -297,6 +301,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://angel.co/u/david-pease";
 					link.target = "_blank";
 					link.innerText = "AngelList";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -304,7 +312,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					const link = document.createElement('a');
 					link.href = "https://github.com/davidfpease";
 					link.target = "_blank";
-					link.innerText = "GitHubb";
+					link.innerText = "GitHub";
 					link.addEventListener('touchstart', function (e) {
 						e.stopPropagation();
 						window.open(e.target);
@@ -317,6 +325,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					const link = document.createElement('a');
 					link.href = "mailto:david.f.pease@gmail.com";
 					link.innerText = "Email Me";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -325,6 +337,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
 					link.target = "_blank";
 					link.innerText = "Resume";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -334,6 +350,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					let modal = document.getElementById('aboutModal');
 					link.innerText = "About";
 					link.onclick = () => modal.style.display = "flex";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						modal.style.display = "flex";
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -341,6 +361,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					const link = document.createElement('div');
 					link.onclick = () => presets.presetShowTech.call(cubelet.cube);
 					link.innerText = "Skills";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						presets.presetShowTech.call(cubelet.cube);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -351,6 +375,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 						//cubelet.cube.twistDuration = 500;
 					} 
 					link.innerText = "Projects";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						presets.presetProjects.call(cubelet.cube);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
@@ -362,6 +390,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					image.width = 120;
 					image.setAttribute("style", "border-radius: 17px; padding: 21px; box-sizing: border-box")
 					image.setAttribute("class", "camera");
+					image.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						presets.presetShowPic.call(cubelet.cube);
+					}, false);
 					stickerElement.appendChild(image);
 				}
 
@@ -502,6 +534,11 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://pierian-spring.herokuapp.com/#/";
 					link.target = "_blank";
 					link.innerText = "Pierian Spring";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
+					
 					stickerElement.appendChild(link);
 				}
 				if (face.color.name === 'orange' && cubelet.id === 19) {
@@ -509,6 +546,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://davidfpease.github.io/LifeLine/";
 					link.target = "_blank";
 					link.innerText = "LifeLine";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 				if (face.color.name === 'orange' && cubelet.id === 20) {
@@ -516,6 +557,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://pillrz.herokuapp.com/#/";
 					link.target = "_blank";
 					link.innerText = "Pillar";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 				if (face.color.name === 'orange' && cubelet.id === 9) {
@@ -523,6 +568,10 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					link.href = "https://davidfpease.github.io/Relatively/";
 					link.target = "_blank";
 					link.innerText = "Relatively";
+					link.addEventListener('touchstart', function (e) {
+						e.stopPropagation();
+						window.open(e.target);
+					}, false);
 					stickerElement.appendChild(link);
 				}
 
