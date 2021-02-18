@@ -578,63 +578,63 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				//Marquee cubelets
 				if (face.color.name === "blue" && cubelet.id === 2) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name1"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 11) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name2"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 20) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name3"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 5) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name4"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 14) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name5"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 23) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name6"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 8) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name7"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 17) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name8"></p>`;
 					stickerElement.appendChild(letter);
 				}
 				if (face.color.name === "blue" && cubelet.id === 26) {
 					let letter = document.createElement('div');
-					letter.setAttribute.height = "100%";
+					letter.setAttribute.style.height = "100%";
 					// letter.style.transform = "rotate(90deg)";
 					letter.innerHTML = `<p class="marquee" id="name9"></p>`;
 					stickerElement.appendChild(letter);
