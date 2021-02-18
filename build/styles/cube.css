@@ -205,7 +205,9 @@
 
 
 .cube .sticker.red 		{ background: #DC422F;	}
-.cube .sticker.white 	{ background: #F3F3F3;	}
+.cube .sticker.white 	{ background: #F3F3F3;	
+	z-index: 100;	
+}
 .sticker.white:hover {
     background-color: pink;
 }
@@ -419,6 +421,7 @@ img#chinook {
 .marquee {
     width: 120px;
     overflow: hidden;
+		margin: 0px;
 }
 
 .marquee-img {
