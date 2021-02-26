@@ -165,7 +165,7 @@ $(document).ready( function(){
 
 	let content = document.createElement( 'div' );
 	content.innerHTML = `<h1 class="code-line">About David Pease</h1>
-	<p>Hi. I’m a former Army helicopter <img id="chinook" src="https://raw.githubusercontent.com/davidfpease/davidfpease.github.io/master/build/media/chinook.png" alt="Chinook"> pilot turned software engineer. I love to solve real-world problems with practial applications of technology. When I’m not coding I spend my time woodworking, hiking, or building low-poly papercraft models.</p>
+	<p>Hi. I’m a former Army helicopter <img id="chinook" src="https://raw.githubusercontent.com/davidfpease/davidfpease.github.io/master/build/media/chinook.png" alt="Chinook"> pilot turned software engineer. I love to solve real-world problems with practical applications of technology. When I’m not coding I spend my time woodworking, hiking, or building low-poly papercraft models.</p>
 	<br><h1 class="code-line" >About this page</h1>
 	<p>I simply added my own <span class="tooltip">twist<span class="tooltiptext">Pun intended!</span></span> to Google’s open source <a href="https://www.google.com/doodles/rubiks-cube" target="_blank">Cuber</a>.<br>
 	Cuber's source code shared on <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber" target="_blank">GitHub</a>– <a href="https://github.com/devdude123/Chrome-Cube-Lab---Cuber/blob/master/cuber/src/LICENSE.md" target="_blank">License</a>.<br>
