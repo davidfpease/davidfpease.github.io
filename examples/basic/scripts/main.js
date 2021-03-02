@@ -119,31 +119,31 @@ $(document).ready( function(){
 	// motion.paused = false;				// disables the effect
 
 	const info = document.getElementById("info");
-	let reset = document.createElement('h3');
+	let reset = document.createElement('p');
 	reset.onclick = () => presets.presetReset.call(cube);
 	reset.innerText = "RESET";
 	reset.className = "reset-button";
 	info.appendChild(reset);
 
-	let skills = document.createElement('h3');
+	let skills = document.createElement('p');
 	skills.onclick = () => presets.presetShowTech.call(cube);
 	skills.innerText = "SKILLS";
 	skills.className = "skills-button";
 	info.appendChild(skills);
 
-	let picture = document.createElement('h3');
+	let picture = document.createElement('p');
 	picture.onclick = () => presets.presetShowPic.call(cube);
 	picture.innerText = "PHOTO";
 	picture.className = "picture-button";
 	info.appendChild(picture);
 
-	let projects = document.createElement('h3');
+	let projects = document.createElement('p');
 	projects.onclick = () => presets.presetProjects.call(cube);
 	projects.innerText = "PROJECTS";
 	projects.className = "projects-button";
 	info.appendChild(projects);
 
-	let about = document.createElement('h3');
+	let about = document.createElement('p');
 	about.innerText = "ABOUT";
 	about.className = "about-button";
 
