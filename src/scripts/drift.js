@@ -39,6 +39,19 @@ drift.on('ready', function (api, payload) {
 
   });
 
+  // drift.on("startConversation", function (data){
+  //   let id = data.conversationId;
+  //   var settings = {
+  //     "url": `https://h9yl5upfuk.execute-api.us-east-1.amazonaws.com/test/helloworld?conversationId=${id}`,
+  //     "method": "GET",
+  //     "timeout": 0,
+  //   };
+
+  //   $.ajax(settings).done(function (response) {
+  //     console.log(response);
+  //   });
+  // })
+
   window.drift.on("conversation:buttonClicked", function (data) {
     console.log("user clicked a button with text: " + data.buttonBody);
     let authorizationToken = "Bearer FfhkCAX2p2kYSJ4ku1B4NHJIrIy6y" + j;
