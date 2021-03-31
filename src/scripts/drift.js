@@ -18,10 +18,7 @@ drift.on('ready', function (api, payload) {
     });
   })
 
-  //TODO: add response to follow on text messages from the visitor, ie. "Please be patient!"
-  drift.on("message:sent", function(data){
-    console.log(data);
-  })
+
 
   drift.on("conversation:buttonClicked", function (data) {
     console.log("user clicked a button with text: " + data.buttonBody);
@@ -40,6 +37,27 @@ drift.on('ready', function (api, payload) {
     };
 
     $.ajax(jokeSettings).done(function (response) {
+      console.log(response);
+    });
+  });
+
+  //TODO: add response to follow on text messages from the visitor, ie. "Please be patient!"
+
+  drift.on("message:sent", function (data) {
+    //send request for "patience" to Lambda
+    let id = data.conversationId;
+    
+    const patience = {
+      "url": `https://h9yl5upfuk.execute-api.us-east-1.amazonaws.com/test/helloworld?conversationId=${id}` +
+        `&patience=true`,
+      "method": "GET",
+      "timeout": 0,
+      "headers": {
+        "Content-Type": "application/json",
+      }
+    };
+
+    $.ajax(patience).done(function (response) {
       console.log(response);
     });
   });
