@@ -456,7 +456,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 25) {
-					image.src = "https://davidfpease.github.io/cube/build/media/Picture8.png";
+					image.src = "cube/build/media/Picture8.png";
 					image.height = 120;
 					image.width = 120;
 					//image.setAttribute("style", "border-radius: 17px;");
