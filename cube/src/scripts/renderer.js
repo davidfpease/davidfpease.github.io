@@ -334,7 +334,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 
 				if (face.color.name === "white"  && cubelet.id === 4) {
 					const link = document.createElement('a');
-					link.href = "https://davidfpease.github.io/build/media/resume.pdf";
+					link.href = "https://davidfpease.github.io/cube/build/media/resume.pdf";
 					link.target = "_blank";
 					link.innerText = "Resume";
 					link.addEventListener('touchstart', function (e) {
@@ -385,7 +385,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				if (face.color.name === "white" && cubelet.id === 6) {
 					const image = document.createElement('img');
 					image.onclick = () => presets.presetShowPic.call(cubelet.cube);
-					image.src = "https://davidfpease.github.io/build/media/camera.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/camera.png";
 					image.height = 120;
 					image.width = 120;
 					image.setAttribute("style", "border-radius: 17px; padding: 21px; box-sizing: border-box")
@@ -400,7 +400,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 				// add profile pic
 				const image = document.createElement('img');
 				if (face.color.name === "red" && cubelet.id === 6) {
-					image.src = "https://davidfpease.github.io/build/media/Picture1.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture1.png";
 					image.height = 120;
 					image.width = 120;
 					image.setAttribute("style", "border-top-left-radius: 17px;");
@@ -408,7 +408,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 7) {
-					image.src = "https://davidfpease.github.io/build/media/Picture2.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture2.png";
 					image.height = 120;
 					image.width = 120;
 					//image.setAttribute("style", "border-radius: 17px;");
@@ -416,7 +416,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 8) {
-					image.src = "https://davidfpease.github.io/build/media/Picture3.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture3.png";
 					image.height = 120;
 					image.width = 120;
 					image.setAttribute("style", "border-top-right-radius: 17px;");
@@ -424,7 +424,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 15) {
-					image.src = "https://davidfpease.github.io/build/media/Picture4.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture4.png";
 					image.height = 120;
 					image.width = 120;
 					//image.setAttribute("style", "border-radius: 17px;");
@@ -432,7 +432,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 16) {
-					image.src = "https://davidfpease.github.io/build/media/Picture5.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture5.png";
 					image.height = 120;
 					image.width = 120;
 					//image.setAttribute("style", "border-radius: 17px;");
@@ -440,7 +440,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 17) {
-					image.src = "https://davidfpease.github.io/build/media/Picture6.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture6.png";
 					image.height = 120;
 					image.width = 120;
 					//image.setAttribute("style", "border-radius: 17px;");
@@ -448,7 +448,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 24) {
-					image.src = "https://davidfpease.github.io/build/media/Picture7.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture7.png";
 					image.height = 120;
 					image.width = 120;
 					image.setAttribute("style", "border-bottom-left-radius: 17px;");
@@ -456,7 +456,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 25) {
-					image.src = "https://davidfpease.github.io/build/media/Picture8.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture8.png";
 					image.height = 120;
 					image.width = 120;
 					//image.setAttribute("style", "border-radius: 17px;");
@@ -464,7 +464,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 					stickerElement.appendChild(image);
 				}
 				if (face.color.name === "red" && cubelet.id === 26) {
-					image.src = "https://davidfpease.github.io/build/media/Picture9.png";
+					image.src = "https://davidfpease.github.io/cube/build/media/Picture9.png";
 					image.height = 120;
 					image.width = 120;
 					image.setAttribute("style", "border-bottom-right-radius: 17px;");
