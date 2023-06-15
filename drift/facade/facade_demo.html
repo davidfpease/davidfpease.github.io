@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drift Façade Demo</title>
+  <link rel="stylesheet" type="text/css" href="facade_style.css">
+</head>
+
+<body>
+  <div class="main" role="main">
+    <h1>Demo of Loading Drift After Clicking on a Façade Element</h1>
+    <div class="drift drift-shown">
+      <div class="drift-widget">
+        <div class="drift-widget-message">
+          <div class="drift-close-button">
+            <img class="drift-close-button-x" style="position: fixed;" src="drift-close-button.svg" alt="drift close">
+          </div>
+          <p class="drift-widget-text">
+            Hey 👋! Any questions? I can have a teammate jump in on chat right now! </p>
+        </div>
+      </div>
+      <div class="drift-facade">
+        <div class="hide-loader drift-loader">
+          <div class="spinner-3"></div>
+        </div>
+
+        <img class="drift-widget-avatar" src="drift_bot.png" alt="drift bot">
+        <img class="drift-facade-img drift-dark-bg drift-hidden" src="drift-icon.svg" alt="drift bot">
+
+        <div class="drift-icon-unread">1</div>
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+    var driftFacade = document.querySelector('.drift');
+    var driftDiv = document.querySelector('.drift-widget');
+    var unreadIcon = document.querySelector('.drift-icon-unread');
+    var closeButton = document.querySelector('.drift-close-button');
+    var avatarImg = document.querySelector('.drift-widget-avatar');
+    var facade = document.querySelector('.drift-facade');
+    var facadeImg = document.querySelector('.drift-facade-img');
+    var loader = document.querySelector('.drift-loader');
+
+    closeButton.addEventListener('click', function () {
+      driftDiv.classList.add('drift-hidden');
+      unreadIcon.classList.add('drift-hidden');
+      avatarImg.classList.add('drift-hidden');
+      facadeImg.classList.remove('drift-hidden');
+
+    });
+
+    const launchDrift = () => {
+      var script = document.createElement('script');
+      script.src = 'drift.js';
+      document.head.appendChild(script);
+      driftDiv.classList.add('drift-hidden');
+      unreadIcon.classList.add('drift-hidden');
+      avatarImg.classList.add('drift-hidden');
+      loader.classList.remove('hide-loader');
+      facade.classList.add('chat-opened');
+      facadeImg.classList.add('drift-hidden');
+    }
+
+    var widgetTextDiv = document.querySelector('.drift-widget-text');
+    widgetTextDiv.addEventListener('click', launchDrift);
+    facade.addEventListener('click', launchDrift);
+    
+
+  </script>
+</body>
+
+</html>
