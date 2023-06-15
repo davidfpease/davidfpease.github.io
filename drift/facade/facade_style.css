@@ -248,3 +248,7 @@ img, #svgProcessCycle {
   height: 70px;
   width: 70px;
 }
+
+.title {
+  text-align: center;
+}
