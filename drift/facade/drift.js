@@ -25,6 +25,11 @@ drift.load('uttup3cu7r8a');
 
 drift.on('ready', function (){
   var facade = document.querySelector('.drift-facade');
+  var driftStatusImgNo = document.querySelector('#no-image');
+  var driftStatusImgYes = document.querySelector('#yes-image');
+
+  driftStatusImgNo.classList.add('drift-hidden');
+  driftStatusImgYes.classList.remove('drift-hidden');
   facade.classList.add('drift-hidden');
   drift.openChat();
 })

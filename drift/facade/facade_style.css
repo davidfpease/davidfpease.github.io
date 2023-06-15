@@ -56,6 +56,10 @@ div {
   display: none;
 }
 
+.drift-hidden {
+  display: none;
+}
+
 .drift-widget {
   position: fixed;
   right: 0;
@@ -220,4 +224,27 @@ img, #svgProcessCycle {
 
 @keyframes s3 {
   100% {transform: rotate(1turn)}
+}
+
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 10px;
+  padding: 20px;
+}
+
+.drift-status {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.drift-status-img {
+  height: 70px;
+  width: 70px;
 }
