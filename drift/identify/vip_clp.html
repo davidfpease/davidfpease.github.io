@@ -10,13 +10,16 @@
 
   <!--Segment Tracking snippet-->
   <script>
-    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){if(window.analytics.initialized)return window.analytics[e].apply(window.analytics,arguments);var i=Array.prototype.slice.call(arguments);i.unshift(e);analytics.push(i);return analytics}};for(var i=0;i<analytics.methods.length;i++){var key=analytics.methods[i];analytics[key]=analytics.factory(key)}analytics.load=function(key,i){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=i};analytics._writeKey="2UrVRHB4nLLiQzXPnZUT6Iasm9Q5Qm6K";;analytics.SNIPPET_VERSION="4.16.1";
-    analytics.load("2UrVRHB4nLLiQzXPnZUT6Iasm9Q5Qm6K");
-    analytics.page();
-    }}();
+    !function () {
+      var analytics = window.analytics = window.analytics || []; if (!analytics.initialize) if (analytics.invoked) window.console && console.error && console.error("Segment snippet included twice."); else {
+        analytics.invoked = !0; analytics.methods = ["trackSubmit", "trackClick", "trackLink", "trackForm", "pageview", "identify", "reset", "group", "track", "ready", "alias", "debug", "page", "once", "off", "on", "addSourceMiddleware", "addIntegrationMiddleware", "setAnonymousId", "addDestinationMiddleware"]; analytics.factory = function (e) { return function () { if (window.analytics.initialized) return window.analytics[e].apply(window.analytics, arguments); var i = Array.prototype.slice.call(arguments); i.unshift(e); analytics.push(i); return analytics } }; for (var i = 0; i < analytics.methods.length; i++) { var key = analytics.methods[i]; analytics[key] = analytics.factory(key) } analytics.load = function (key, i) { var t = document.createElement("script"); t.type = "text/javascript"; t.async = !0; t.src = "https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var n = document.getElementsByTagName("script")[0]; n.parentNode.insertBefore(t, n); analytics._loadOptions = i }; analytics._writeKey = "2UrVRHB4nLLiQzXPnZUT6Iasm9Q5Qm6K";; analytics.SNIPPET_VERSION = "4.16.1";
+        analytics.load("2UrVRHB4nLLiQzXPnZUT6Iasm9Q5Qm6K");
+        analytics.page();
+      }
+    }();
   </script>
 
-<script>
+  <script>
     //Start of Async Drift Code -->
     "use strict";
     !function () {
@@ -55,15 +58,15 @@
 
   <script>
     const names = fetch('/drift/identify/names.json')
-  .then(response => response.json())
-  .then(data => {
-    // 'data' is the parsed JSON object
-    debugger;
-    console.log(data);
-  })
-  .catch(error => {
-    console.error('Error fetching JSON:', error);
-  });
+      .then(response => response.json())
+      .then(data => {
+        // 'data' is the parsed JSON object
+        debugger;
+        console.log(data);
+      })
+      .catch(error => {
+        console.error('Error fetching JSON:', error);
+      });
     //uses pipedream enpoint here: https://pipedream.com/@dpease/segment-jwt-validator-p_k2CPaqB/inspect/2FN3ja58r8tCS0nNk2dKrTb3y4k
     const getJWT = async function (id) {
       let response = await axios.get(`https://eol2kmvjljl689k.m.pipedream.net/?userId=${id}`)
@@ -133,6 +136,11 @@
         let userId = Date.now();
         localStorage.setItem("userId", userId);
 
+        const button = document.getElementById('vip_button');
+
+        // Change the display style to make the button visible
+        button.style.display = 'block';
+
         //drift.unload();
 
         analytics.identify(userId,
@@ -162,7 +170,7 @@
             { userJwt: jwt }
           );
           window.location.reload();
-          
+
         });
 
 
@@ -187,6 +195,9 @@
   <h3>Simulate a Login</h3>
   <button id="login">Simulate a login</button><br><br>
   <button id="logout">Simulate a logout</button><br><br>
+  <a href="https://clp.dpease.online/vip_clp">
+    <button id="vip_button" style="display: none;">VIP CLP Only for Logged In Users</button>
+  </a>
   <h3 id="logged-in-as"></h3>
   <h3 id="cookie-title"></h3>
   <ul name="Cookies" id="cookies"></ul>
