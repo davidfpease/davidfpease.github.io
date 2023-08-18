@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.27.2/dist/axios.min.js"></script>
+  <title>VIP CLP Example</title>
+
+  <!--Segment Tracking snippet-->
+  <script>
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){if(window.analytics.initialized)return window.analytics[e].apply(window.analytics,arguments);var i=Array.prototype.slice.call(arguments);i.unshift(e);analytics.push(i);return analytics}};for(var i=0;i<analytics.methods.length;i++){var key=analytics.methods[i];analytics[key]=analytics.factory(key)}analytics.load=function(key,i){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=i};analytics._writeKey="2UrVRHB4nLLiQzXPnZUT6Iasm9Q5Qm6K";;analytics.SNIPPET_VERSION="4.16.1";
+    analytics.load("2UrVRHB4nLLiQzXPnZUT6Iasm9Q5Qm6K");
+    analytics.page();
+    }}();
+  </script>
+
+<script>
+    //Start of Async Drift Code -->
+    "use strict";
+    !function () {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+          t.factory = function (e) {
+            return function () {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function (e) {
+            t[e] = t.factory(e);
+          }), t.load = function (t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+      }
+      //<!-- End of Async Drift Code -->
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('uttup3cu7r8a');
+
+    drift.on('emailCapture', (data) => {
+      console.log(data.data.email);
+      analytics.identify({
+        "email": data.data.email,
+        "knownByDrift": true
+      })
+    })
+
+  </script>
+
+  <script>
+    const names = fetch('/drift/identify/names.json')
+  .then(response => response.json())
+  .then(data => {
+    // 'data' is the parsed JSON object
+    debugger;
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error fetching JSON:', error);
+  });
+    //uses pipedream enpoint here: https://pipedream.com/@dpease/segment-jwt-validator-p_k2CPaqB/inspect/2FN3ja58r8tCS0nNk2dKrTb3y4k
+    const getJWT = async function (id) {
+      let response = await axios.get(`https://eol2kmvjljl689k.m.pipedream.net/?userId=${id}`)
+        .then(function (response) {
+          return response.data.userJWT
+        })
+        .catch(function (error) {
+          // handle error
+          console.log(error);
+        })
+      return response
+    };
+
+    // listen for DOMContentLoaded event in the document
+    document.addEventListener("DOMContentLoaded", function () {
+      // do things after the DOM loads partially
+      //console.log(document.cookie.split(';'))
+      console.log("DOM is loaded");
+      const button = document.querySelector("#button1");
+      button.addEventListener("click", () => {
+        console.log("Cancel Request Event tracked in segment and sent to Lambda.");
+        analytics.track('Cancel Request', {
+          title: 'Cancel Request Submitted',
+          course: 'Algorithms',
+        });
+      });
+
+      drift.on("ready", () => {
+        let cookieList = document.querySelector("#cookies");
+        document.cookie.split(";").forEach((cookie) => {
+          let cookieItem = document.createElement('li');
+          cookieItem.appendChild(document.createTextNode(cookie));
+          cookieList.appendChild(cookieItem);
+        });
+
+        let localStorageList = document.querySelector("#local-storage");
+        Object.keys(localStorage).forEach((key) => {
+          let storageItem = document.createElement('li');
+          storageItem.appendChild(document.createTextNode(key + ": " + localStorage[key]));
+          localStorageList.appendChild(storageItem);
+        })
+      })
+
+      if (localStorage.email) {
+        document.querySelector("#logged-in-as").innerHTML = `You're logged in as: ${localStorage.email}.`;
+      }
+
+      if (localStorage.jwt) {
+        document.querySelector("#jwt").innerText = `${localStorage.jwt}`;
+        document.querySelector("#jwt-title").innerText = `JWT: `;
+      }
+
+      document.querySelector("#cookie-title").innerText = `Cookies:`;
+      document.querySelector("#local-storage-title").innerText = `LocalStorage`;
+
+
+      const loginButton = document.querySelector("#login");
+      loginButton.addEventListener("click", () => {
+        let name = names[Math.floor(Math.random() * names.length)];
+        let firstName = name.split(' ')[0];
+        let lastName = name.split(' ')[1];
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+        let email = firstName + "." + lastName + "@testemail.com";
+        localStorage.setItem("email", email);
+
+        let userId = Date.now();
+        localStorage.setItem("userId", userId);
+
+        //drift.unload();
+
+        analytics.identify(userId,
+          {
+            firstName,
+            lastName,
+            name: firstName + " " + lastName
+          });
+
+        getJWT(userId).then((jwt) => {
+
+          localStorage.setItem("jwt", jwt);
+          console.log("JWT:", localStorage.jwt);
+          document.querySelector("#jwt").innerText = `${localStorage.jwt}`;
+          document.querySelector("#jwt-title").innerText = `JWT: `;
+
+          drift.identify(`${userId}`,
+            {
+              segmentId: localStorage.ajs_anonymous_id,
+              externalId: userId,
+
+              firstName,
+              lastName,
+              email,
+              userId
+            },
+            { userJwt: jwt }
+          );
+          window.location.reload();
+          
+        });
+
+
+      });
+      const logoutButton = document.querySelector("#logout");
+      logoutButton.addEventListener("click", () => {
+        localStorage.clear();
+        drift.reset();
+        window.location.reload();
+
+      });
+    });
+
+
+  </script>
+
+</head>
+
+<body>
+  <h1>Segment Integration Test_</h1>
+  <h2>Uses Segment Account integrations@drift.com</h2>
+  <h3>Simulate a Login</h3>
+  <button id="login">Simulate a login</button><br><br>
+  <button id="logout">Simulate a logout</button><br><br>
+  <h3 id="logged-in-as"></h3>
+  <h3 id="cookie-title"></h3>
+  <ul name="Cookies" id="cookies"></ul>
+  <br>
+  <h3 id="jwt-title"></h3>
+  <p id="jwt"></p><br><br>
+  <h3 id="local-storage-title"></h3>
+
+  <ul id="local-storage"></ul>
+
+
+  <button id="button1">Cancel Request</button><br><br>
+
+</body>
+
+</html>
