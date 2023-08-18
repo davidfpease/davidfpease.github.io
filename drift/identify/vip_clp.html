@@ -57,16 +57,6 @@
   </script>
 
   <script>
-    const names = fetch('/drift/identify/names.json')
-      .then(response => response.json())
-      .then(data => {
-        // 'data' is the parsed JSON object
-        debugger;
-        console.log(data);
-      })
-      .catch(error => {
-        console.error('Error fetching JSON:', error);
-      });
     //uses pipedream enpoint here: https://pipedream.com/@dpease/segment-jwt-validator-p_k2CPaqB/inspect/2FN3ja58r8tCS0nNk2dKrTb3y4k
     const getJWT = async function (id) {
       let response = await axios.get(`https://eol2kmvjljl689k.m.pipedream.net/?userId=${id}`)
@@ -124,56 +114,64 @@
 
 
       const loginButton = document.querySelector("#login");
-      loginButton.addEventListener("click", (names) => {
-        let name = names[Math.floor(Math.random() * names.length)];
-        let firstName = name.split(' ')[0];
-        let lastName = name.split(' ')[1];
-        localStorage.setItem("firstName", firstName);
-        localStorage.setItem("lastName", lastName);
-        let email = firstName + "." + lastName + "@testemail.com";
-        localStorage.setItem("email", email);
+      loginButton.addEventListener("click", () => {
+        fetch('/drift/identify/names.json')
+          .then(response => response.json())
+          .then(names => {
+            let name = names[Math.floor(Math.random() * names.length)];
+            let firstName = name.split(' ')[0];
+            let lastName = name.split(' ')[1];
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("lastName", lastName);
+            let email = firstName + "." + lastName + "@testemail.com";
+            localStorage.setItem("email", email);
 
-        let userId = Date.now();
-        localStorage.setItem("userId", userId);
+            let userId = Date.now();
+            localStorage.setItem("userId", userId);
 
-        const button = document.getElementById('vip_button');
+            const button = document.getElementById('vip_button');
 
-        // Change the display style to make the button visible
-        button.style.display = 'block';
+            // Change the display style to make the button visible
+            button.style.display = 'block';
 
-        //drift.unload();
+            //drift.unload();
 
-        analytics.identify(userId,
-          {
-            firstName,
-            lastName,
-            name: firstName + " " + lastName
+            analytics.identify(userId,
+              {
+                firstName,
+                lastName,
+                name: firstName + " " + lastName
+              });
+
+            getJWT(userId).then((jwt) => {
+
+              localStorage.setItem("jwt", jwt);
+              console.log("JWT:", localStorage.jwt);
+              document.querySelector("#jwt").innerText = `${localStorage.jwt}`;
+              document.querySelector("#jwt-title").innerText = `JWT: `;
+
+              drift.identify(`${userId}`,
+                {
+                  segmentId: localStorage.ajs_anonymous_id,
+                  externalId: userId,
+
+                  firstName,
+                  lastName,
+                  email,
+                  userId
+                },
+                { userJwt: jwt }
+              );
+              window.location.reload();
+
+            });
+
+
+
+          })
+          .catch(error => {
+            console.error('Error fetching JSON:', error);
           });
-
-        getJWT(userId).then((jwt) => {
-
-          localStorage.setItem("jwt", jwt);
-          console.log("JWT:", localStorage.jwt);
-          document.querySelector("#jwt").innerText = `${localStorage.jwt}`;
-          document.querySelector("#jwt-title").innerText = `JWT: `;
-
-          drift.identify(`${userId}`,
-            {
-              segmentId: localStorage.ajs_anonymous_id,
-              externalId: userId,
-
-              firstName,
-              lastName,
-              email,
-              userId
-            },
-            { userJwt: jwt }
-          );
-          window.location.reload();
-
-        });
-
-
       });
       const logoutButton = document.querySelector("#logout");
       logoutButton.addEventListener("click", () => {
