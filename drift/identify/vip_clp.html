@@ -124,7 +124,7 @@
 
 
       const loginButton = document.querySelector("#login");
-      loginButton.addEventListener("click", () => {
+      loginButton.addEventListener("click", (names) => {
         let name = names[Math.floor(Math.random() * names.length)];
         let firstName = name.split(' ')[0];
         let lastName = name.split(' ')[1];
