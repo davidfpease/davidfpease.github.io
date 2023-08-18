@@ -74,6 +74,18 @@
     document.addEventListener("DOMContentLoaded", function () {
       // do things after the DOM loads partially
       //console.log(document.cookie.split(';'))
+      const vipButton = document.getElementById('vip_button');
+      
+      const firstName = localStorage.getItem('firstName');
+       if (firstName) {
+         // Change the display style to make the button visible
+         vipButton.style.display = 'block';
+        
+       }
+
+
+
+
       console.log("DOM is loaded");
       const button = document.querySelector("#button1");
       button.addEventListener("click", () => {
@@ -129,10 +141,8 @@
             let userId = Date.now();
             localStorage.setItem("userId", userId);
 
-            const button = document.getElementById('vip_button');
+          
 
-            // Change the display style to make the button visible
-            button.style.display = 'block';
 
             //drift.unload();
 
