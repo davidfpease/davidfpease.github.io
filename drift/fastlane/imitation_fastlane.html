@@ -89,7 +89,7 @@
 
   <div id="iframeModal" class="modal">
     <span class="close-btn" id="closeModalBtn">&times;</span>
-    <iframe id="iframeContent" src="https://clp.dpease.online/embed/271218/5000883" id="drift-embed-frame"></iframe>
+    <iframe id="iframeContent" src="about:blank" id="drift-embed-frame"></iframe>
   </div>
 
   <script>
@@ -100,7 +100,7 @@
     var iframe = document.getElementById('iframeContent');
 
     openBtn.addEventListener('click', function () {
-      //iframe.src = "https://clp.dpease.online/2721474"; // Replace with your URL
+      iframe.src = "https://clp.dpease.online/2721474"; // Replace with your URL
       modal.style.display = 'block';
       overlay.style.display = 'block';
     });
