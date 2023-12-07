@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Start of Async Drift Code -->
+  <script>
+    "use strict";
+
+    !function () {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+          t.factory = function (e) {
+            return function () {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function (e) {
+            t[e] = t.factory(e);
+          }), t.load = function (t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('uttup3cu7r8a');
+
+  </script>
+  <!-- End of Async Drift Code -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Partial Screen Iframe Modal</title>
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60%;
+      /* Adjust modal width */
+      height: 70%;
+      /* Adjust modal height */
+      background-color: white;
+      z-index: 1000;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      /* Adjust iframe height to leave space for the close button */
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* Background overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="openModalBtn">Open Iframe Modal</button>
+
+  <div id="overlay" class="overlay"></div>
+
+  <div id="iframeModal" class="modal">
+    <span class="close-btn" id="closeModalBtn">&times;</span>
+    <iframe id="iframeContent" src="https://clp.dpease.online/embed/271218/5000883" id="drift-embed-frame"></iframe>
+  </div>
+
+  <script>
+    var modal = document.getElementById('iframeModal');
+    var overlay = document.getElementById('overlay');
+    var openBtn = document.getElementById('openModalBtn');
+    var closeBtn = document.getElementById('closeModalBtn');
+    var iframe = document.getElementById('iframeContent');
+
+    openBtn.addEventListener('click', function () {
+      //iframe.src = "https://clp.dpease.online/2721474"; // Replace with your URL
+      modal.style.display = 'block';
+      overlay.style.display = 'block';
+    });
+
+    closeBtn.addEventListener('click', function () {
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+
+    overlay.addEventListener('click', function () {
+      modal.style.display = 'none';
+      overlay.style.display = 'none';
+    });
+  </script>
+</body>
+
+</html>
