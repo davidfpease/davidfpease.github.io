@@ -114,6 +114,16 @@
       modal.style.display = 'none';
       overlay.style.display = 'none';
     });
+
+    window.addEventListener('message', (event) => {
+      // Make sure to verify the sender of the message
+      if (event.origin !== 'EXPECTED_ORIGIN') { // Replace with the origin you expect
+        return;
+      }
+
+      // Log the received message
+      console.log('Received message:', event.data);
+    });
   </script>
 </body>
 
